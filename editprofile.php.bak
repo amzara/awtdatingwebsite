@@ -291,7 +291,6 @@ $matching = $_POST['matching'];
 $sessions = $_SESSION['user_id'];
 $query = "UPDATE usersinfo SET age = '$age', sex = '$sex', location = '$location', matching='$matching' WHERE user_id = '$sessions'";
 mysqli_query($con, $query);
-header("Location: index.php");
 
 }
 
