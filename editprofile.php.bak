@@ -290,7 +290,12 @@ $matching = $_POST['matching'];
 
 $sessions = $_SESSION['user_id'];
 $query = "UPDATE usersinfo SET age = '$age', sex = '$sex', location = '$location', matching='$matching' WHERE user_id = '$sessions'";
+$query2= "UPDATE usersinfo SET matching='$matching' WHERE user_id = '$sessions'";
+echo "Update succesful";
+
 mysqli_query($con, $query);
+mysqli_query($con, $query2);
+
 
 }
 
@@ -301,5 +306,7 @@ mysqli_query($con, $query);
 
 
 ?>
+
+<br><br><br><a href="index.php">Click here to go back to main menu</a>
 </body>
 </html>

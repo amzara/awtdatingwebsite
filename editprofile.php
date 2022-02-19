@@ -290,8 +290,12 @@ $matching = $_POST['matching'];
 
 $sessions = $_SESSION['user_id'];
 $query = "UPDATE usersinfo SET age = '$age', sex = '$sex', location = '$location', matching='$matching' WHERE user_id = '$sessions'";
+$query2= "UPDATE users SET matching='$matching' WHERE user_id = '$sessions'";
+echo "Update succesful";
+
 mysqli_query($con, $query);
-header("Location: index.php");
+mysqli_query($con, $query2);
+
 
 }
 
@@ -302,5 +306,7 @@ header("Location: index.php");
 
 
 ?>
+
+<br><br><br><a href="index.php">Click here to go back to main menu</a>
 </body>
 </html>

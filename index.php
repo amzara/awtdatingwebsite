@@ -29,6 +29,7 @@ session_start();
 	<p>What do you want to do?</p>
 	<a href="editprofile.php">Edit my profile information.</p>
 	<a href="listallprofile.php">See all user that wants to match up.</a><br>
+	<a href="listallprofiletest2.php">List all test</a><br>
 	
 	--------------------------------------------------------<br><br>
 	<?php
