@@ -14,7 +14,7 @@ $result = json_decode($user_data,true);
 
     echo "success";
 
-// $sql = "UPDATE usersinfo SET lastname='Doe' WHERE  username=";
+
 
 
 ?>
