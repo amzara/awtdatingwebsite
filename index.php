@@ -30,7 +30,7 @@ session_start();
 	<p>What do you want to do?</p>
 	<a href="editprofile.php">Edit my profile information.</p>
 	<a href="listallprofile.php">See all user that wants to match up.</a><br>
-	<a href="selectmatch2.php">Test</a>
+	<a href="selectmatch3.html">Test</a>
 	
 	--------------------------------------------------------<br><br>
 	<?php
