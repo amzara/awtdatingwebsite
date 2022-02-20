@@ -25,14 +25,17 @@ session_start();
 	Hello, <?php echo $user_data['user_name']; ?>
 	Password : <?php echo $user_data['password']; ?>
 	Current matching status : <?php echo $user_data['matching']; ?>
+	
 	<br><br>
 	<p>What do you want to do?</p>
 	<a href="editprofile.php">Edit my profile information.</p>
 	<a href="listallprofile.php">See all user that wants to match up.</a><br>
-	<a href="listallprofiletest2.php">List all test</a><br>
+	<a href="selectmatch2.php">Test</a>
 	
 	--------------------------------------------------------<br><br>
 	<?php
+	
+	//echo "My location is" . $user_data['location'];
 	
 	if($user_data['matching']==0){
 	echo "There is no match request right now";	
