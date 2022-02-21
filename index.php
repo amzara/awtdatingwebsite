@@ -23,7 +23,7 @@ session_start();
 	
 	<a href="logout.php">Logout</a>
 	<div class="myHeader">
-	<h1>AWT DATING WEBSITE!</h1>
+	<h1>AWT DATING WEBSITE!!</h1>
 	<h1>Where you can finally find a friend or girlfriend in EQIU!</h1>
 </div>
 	
