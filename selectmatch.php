@@ -28,6 +28,10 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo "<br>|Username: ". $row["user_name"]. "| AGE: ". $row["age"].  "|Sex:" . $row["sex"] . "|Location:" . $row["location"] ."<br>";
 		$matchusername=$row["user_name"];
+        echo "<form method='post' action='matchfunction.php'>
+<input type='hidden' value ='$matchusername'  name='matchusername'>
+<input value='match' type='submit'>
+</form>";
 		
     }
 } else {
@@ -41,3 +45,4 @@ echo "Send a match request with user " . $matchusername. "?";
 ?>
 
 
+</html>

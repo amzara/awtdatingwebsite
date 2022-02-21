@@ -12,41 +12,80 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My website</title>
+<title>AWT DATING WEBSITE</title>
+<link rel="stylesheet" href="index.css">
 </head>
 <body>
 	
 	
 	
 	<a href="logout.php">Logout</a>
-	<h1>This is the index page</h1>
+	<div class="myHeader">
+	<h1>AWT DATING WEBSITE!</h1>
+	<h1>Where you can finally find a friend or girlfriend in EQIU!</h1>
+</div>
+	
 
 	<br>
 	Hello, <?php echo $user_data['user_name']; ?>
-	Password : <?php echo $user_data['password']; ?>
+	
 	Current matching status : <?php echo $user_data['matching']; ?>
 	
 	<br><br>
 	<p>What do you want to do?</p>
-	<a href="editprofile.php">Edit my profile information.</p>
+	<a href="editprofile.php">Edit my profile information and set matching status.</p>
 	<a href="listallprofile.php">See all user that wants to match up.</a><br>
-	<a href="selectmatch2.php">Test</a>
+	<br>
 	
 	--------------------------------------------------------<br><br>
-	<?php
+
+	<?php 
+	$user_data = check_login($con);
+	$json = json_encode($user_data);
+	$result = json_decode($json,true);
+	$matchrequestfrom=$result['matchrequestfrom'];
+	$currentmatch=$result['currentmatch'];
+	if($result['matchrequest'] == 1){
+		echo "You currently have a match request from user: " .$result['matchrequestfrom'];
+		echo "<br>";
+		echo "Accept?"; 
+		echo "<form method='post' action='multiquery.php'>
+		<input type='hidden' value ='$matchrequestfrom'  name='matchrequestfrom'>
+		<input value='Match!' type='submit'>
+		</form>";
+		echo "<form method='post' action='declinematch.php'>
+		<input value='Reject' type='submit'>";
+	}
 	
-	//echo "My location is" . $user_data['location'];
+		
+
+		
+	else if($result['matching']==2){
+		echo "You are currently matched with user " .$result['currentmatch']."<br>";
+		echo "Click here to start dating<br>";
+		
+		echo "Click here to unmatch";
+		echo "<form method='post' action='unmatch.php'>
+
+		
+		<input value='Unmatch!' type='submit'>
+		</form>"; 
+
+
+	}else{
+		echo "You do not have a match request right now.<br>";
+	}
 	
-	if($user_data['matching']==0){
-	echo "There is no match request right now";	
-	}
-	if($user_data['matching']==1){
-	echo "You are currently looking for a match";
-	}
-	if($user_data['matching']==2){
-	echo "There is a match from user (requested user)";
-	}
+
+	
+	
+	
 
 ?>	
+
+-----------------------------------<br>
+<a href="selectmatch3.html">LOVE API CALCULATOR</a><br>
+<a href="googletranslate.html">Google Translate API</a><br>
+
 </body>
 </html>
