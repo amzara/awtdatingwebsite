@@ -15,7 +15,7 @@ session_start();
 
 	
 <title>AWT DATING WEBSITE</title>
-<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="home.css">
 </head>
 <body>
 	
@@ -37,7 +37,8 @@ session_start();
 	<p>What do you want to do?</p>
 	<a href="editprofile.php">Edit my profile information and set matching status.</p>
 	<a href="listallprofile.php">See all user that wants to match up.</a><br>
-	<br>
+	<a href="requestdate.php">Test</a>
+	<a href="selectmatch.php">Testselectmatch</a>
 	
 	--------------------------------------------------------<br><br>
 
@@ -47,6 +48,8 @@ session_start();
 	$result = json_decode($json,true);
 	$matchrequestfrom=$result['matchrequestfrom'];
 	$currentmatch=$result['currentmatch'];
+	$daterequest=$result['daterequest'];
+	
 	if($result['matchrequest'] == 1){
 		echo "You currently have a match request from user: " .$result['matchrequestfrom'];
 		echo "<br>";
@@ -64,9 +67,19 @@ session_start();
 		
 	else if($result['matching']==2){
 		echo "You are currently matched with user " .$result['currentmatch']."<br>";
-		echo "Click here to start dating<br>";
-		
+		if($daterequest==1){
+			echo $result['currentmatch']. " has sent you a date request. Click here to view<br>";
+			echo "<form method='post' action='viewdaterequest.php'>";
+			echo "<input type='submit' value='View'>";
+
+		}else{
+		echo "Click here to send a date request<br>";
+		echo "<form method='post' action='requestdate.php'>	
+		<input value='Request a date' type='submit'>";
+		}
+		echo "<br>";
 		echo "Click here to unmatch";
+		echo "<br>";
 		echo "<form method='post' action='unmatch.php'>
 
 		
@@ -86,8 +99,8 @@ session_start();
 ?>	
 
 -----------------------------------<br>
-<a href="selectmatch3.html">LOVE API CALCULATOR</a><br>
-<a href="googletranslate.html">Google Translate API</a><br>
+<a href="selectmatch3.html" target="_blank">LOVE API CALCULATOR</a><br>
+<a href="googletranslate.html" target="_blank">Google Translate API</a><br>
 
 </body>
 </html>

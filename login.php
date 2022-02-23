@@ -49,12 +49,13 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="login.css">
 	<title>Login</title>
 </head>
 <body>
 
 	<style type="text/css">
-	
+	/*
 	#text{
 
 		height: 25px;
@@ -80,7 +81,7 @@ session_start();
 		width: 300px;
 		padding: 20px;
 	}
-
+*/
 	</style>
 
 	<div id="box">
