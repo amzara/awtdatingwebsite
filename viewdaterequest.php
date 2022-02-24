@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="base.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
@@ -37,7 +38,7 @@ if ($resultt->num_rows > 0) {
         echo "Date: ".$date."<br>";
         echo  "Time: ".$time."<br>";
         echo "Venue: ".$venue."<br>";
-         echo "<div id='image'>aaa</div>";
+        echo "<div id='image'>This is where the image from google image search will come out, empty this text and uncomment to make it work</div>";
         echo "Message: ".$datemessage."<br>";
 
     
@@ -51,7 +52,7 @@ if ($resultt->num_rows > 0) {
 ?>
 
 <script type="text/javascript">
-  /*commenting so that i dont reach 50 use limit
+  /*commenting so i don't 
     var venue = "<?php Print($venue); ?>";
     var final_result;
     var settings = {
@@ -69,13 +70,13 @@ if ($resultt->num_rows > 0) {
                   $.ajax(settings).done(function (response) {
                     console.log(response);
                     final_result = response[0].image.url;
-                    $("#image").prepend(`<img id="theImg" width="40%" height="40%" src="${final_result}" />`);
+                    $("#image").prepend(`<img id="theImg" width="30%" height="30%" src="${final_result}" />`);
                    
                    
                   });
 
                 //   console.log(final_result);
-                */
+                
   
 </script>
 

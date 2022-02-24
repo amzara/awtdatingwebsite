@@ -18,4 +18,8 @@ echo "You have rejected match request from user $matchrequestfrom";
 
 echo "<a href='index.php'>Click here to go back to main menu</a>";
 
+?>
+<head>
+<link rel="stylesheet" href="base.css">
+</head>
 

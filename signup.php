@@ -1,3 +1,5 @@
+
+
 <?php 
 session_start();
 
@@ -46,6 +48,7 @@ session_start();
 <html>
 <head>
 	<title>Signup</title>
+	<link rel="stylesheet" href="login.css">
 </head>
 <body>
 
@@ -82,11 +85,11 @@ session_start();
 	<div id="box">
 		
 		<form method="post">
-			<div style="font-size: 20px;margin: 10px;text-align:center;color: white;">Signup</div>
+			<div style="font-size: 20px;margin: 5px;text-align:center;color: white;">Signup</div>
 
-			Username:<input id="text" type="text" name="user_name"><br><br>
+			Name<input id="text" type="text" name="user_name" value="Name"><br><br>
 			Password:<input id="text" type="password" name="password"><br><br> 
-			Email:<input id="text" type="password" name="email"><br><br>
+			Email<input id="text" type="password" name="email"><br><br>
 
 			<input id="button" type="submit" value="Signup"><br><br>
 

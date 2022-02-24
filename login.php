@@ -36,10 +36,10 @@ session_start();
 				}
 			}
 			
-			echo "wrong username or password!";
+			echo '<script>alert("Wrong username/password!")</script>';
 		}else
 		{
-			echo "wrong username or password!";
+			echo '<script>alert("Username/password combination does not exist!")</script>';
 		}
 	}
 
@@ -55,7 +55,7 @@ session_start();
 <body>
 
 	<style type="text/css">
-	/*
+	
 	#text{
 
 		height: 25px;
@@ -74,14 +74,34 @@ session_start();
 		border: none;
 	}
 
+	#signupbutton{
+
+		padding: 10px;
+		width: 100px;
+		color: white;
+		background-color: lightblue;
+		border: none;
+		position:fixed;
+		margin-left:180px;
+		margin-top:-36px;
+		
+	}
+
+	
+
 	#box{
 
 		background-color: grey;
-		margin: auto;
+		margin:0 auto;
 		width: 300px;
-		padding: 20px;
+		padding:20px;
+		position: fixed;
+		margin-left:38%;
+
+		
+		
 	}
-*/
+
 	</style>
 
 	<div id="box">
@@ -92,10 +112,16 @@ session_start();
 			<input id="text" type="text" name="user_name"><br><br>
 			<input id="text" type="password" name="password"><br><br>
 
-			<input id="button" type="submit" value="Login"><br><br>
+			<input id="button" type="submit" value="Login">
+</form>
+<form action="signup.php">
+<input id="signupbutton" type="submit" value="Sign Up"><br><br>
+</form>
 
-			<a href="signup.php">Click to Signup</a><br><br>
-		</form>
+				
+	
 	</div>
+
+	
 </body>
 </html>

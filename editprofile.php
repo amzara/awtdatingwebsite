@@ -314,7 +314,8 @@ $matching = $_POST['matching'];
 $sessions = $_SESSION['user_id'];
 $query = "UPDATE usersinfo SET age = '$age', sex = '$sex', location = '$location', matching='$matching' WHERE user_id = '$sessions'";
 $query2= "UPDATE users SET matching='$matching' WHERE user_id = '$sessions'";
-echo "Update succesful";
+echo '<script>alert("User profile update successful.")</script>';
+
 
 mysqli_query($con, $query);
 mysqli_query($con, $query2);

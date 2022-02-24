@@ -22,7 +22,10 @@ $query4= "UPDATE usersinfo SET matching=2 WHERE user_name='$matcheduser'";
 mysqli_query($con, $query4);
 
 echo "Matching between ". $currentuser. " and ".$matcheduser." is succesful.";
-echo "<br><br><a href='index.php'>Click here to go back to main menu.</a>";
+echo "<br>";
+echo "<a href='index.php'>You will be redirected after 3 second</a>";
+    
+  header("refresh:3;url=index.php" );
 ?>
 
 <?php
@@ -41,3 +44,7 @@ matching =2(matched with someoen currently) matchrequest=0 mathrequestfrom=0 cur
 echo "success";
 */
 ?>
+
+<head>
+<link rel="stylesheet" href="base.css">
+</head>

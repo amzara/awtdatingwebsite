@@ -12,34 +12,74 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+
+body{
+	background-color: lightblue;
+}
+
+hr{
+width:65%;
+border: 5px ;
+border-radius: 2px;
+}
+
+#coupleimage{
+position:absolute;
+left:65%;
+top:15%;	
+
+}
+
+#notnavbar{
+margin-left:99px;
+padding:10px;
+
+}
+
+
+}	
+	</style>
 
 	
 <title>AWT DATING WEBSITE</title>
-<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="base.css">
 </head>
 <body>
-	
-	
+<nav>
+    <div class="logo">
+		
+        <p>💙AWT DATING WEBSITE</p>
+    </div>
+    <ul>
+        <li><a href="index.php" class="active">Home</a></li>
+        <li><a href="lovecalculator.html">Quick Guide</a></li>
+        <li><a href="googletranslate.html">Love Calculator</a></li>
+        <li><a href="">Google Translate</a></li>
+        <li><a href="logout.php">Logout</a></li>
+    </ul>
+</nav>
+<div id="notnavbar">	
 	
 	<a href="logout.php">Logout</a>
 	<div class="myHeader">
 	<h1>AWT DATING WEBSITE!!</h1>
-	<h1>Where you can finally find a friend or girlfriend in EQIU!</h1>
+	<h1>Where you can finally find a friend or girlfriend in QIU!</h1>
 </div>
 	
 
 	<br>
-	Hello, <?php echo $user_data['user_name']; ?>
-	
+	Hello, <?php echo $user_data['user_name']; ?>.
+	<br>
 	Current matching status : <?php echo $user_data['matching']; ?>
 	
 	<br><br>
 	<p>What do you want to do?</p>
 	<a href="editprofile.php">Edit my profile information and set matching status.</p>
-	<a href="listallprofile.php">See all user that wants to match up.</a><br>
+	<a href="listallprofile.php">Start matching up with people.</a><br>
 
 	
-	--------------------------------------------------------<br><br>
+	<hr><br><br>
 
 	<?php 
 	$user_data = check_login($con);
@@ -91,7 +131,8 @@ session_start();
 	}else{
 		echo "Click here to send a date request<br>";
 		echo "<form method='post' action='requestdate.php'>	
-		<input value='Request a date' type='submit'>";
+		<input value='Request a date' type='submit'></form>";
+		
 		}
 		echo "<br>";
 		echo "Click here to unmatch";
@@ -114,9 +155,14 @@ session_start();
 
 ?>	
 <br>
------------------------------------<br>
-<a href="lovecalculator.html" target="_blank">LOVE API CALCULATOR</a><br>
-<a href="googletranslate.html" target="_blank">Google Translate API</a><br>
+<hr><br>
+
+
+<div id="coupleimage">
+<img src="https://images.hdqwalls.com/wallpapers/anime-couple-holding-hands-hatsune-miku-rd.jpg" alt="Girl in a jacket" width="400" height="400">
+</div>
+</div>
+</div>
 
 </body>
 </html>

@@ -1,3 +1,7 @@
+<head>
+<link rel="stylesheet" href="base.css">
+</head>
+
 <?php
 
 session_start();

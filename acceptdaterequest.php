@@ -43,3 +43,9 @@ if ($resultt->num_rows > 0) {
     echo "<a href='index.php'>Click here to go back to main menu.</a>";
 
 }
+
+?>
+
+<head>
+<link rel="stylesheet" href="base.css">
+</head>

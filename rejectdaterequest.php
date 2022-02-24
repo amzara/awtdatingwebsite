@@ -20,3 +20,9 @@ mysqli_query($con, $query2);
 
 echo "Rejected date request from". $matcheduser;
 echo "<a href='index.php'>Click here to go back to main menu</a>";
+
+?>
+
+<head>
+<link rel="stylesheet" href="base.css">
+</head>

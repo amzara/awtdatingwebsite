@@ -11,8 +11,11 @@ $target=$result['currentmatch'];
 ?>
 
 <html>
+<head>
+<link rel="stylesheet" href="requestdate.css">
+</head>
 <body>
-
+<h2>Request A Date</h2>
 <form method="POST">
 Date: <input type="date" required name="date" min="2022-01-01" max="2023-01-01"><br>
 Time: <input type="time" required name="time"><br>
@@ -48,7 +51,7 @@ mysqli_query($con, $query);
 $query2= "UPDATE usersdate SET date='$date',time='$time',venue='$venue',datemessage='$datemessage' WHERE user_name='$target'";
 mysqli_query($con, $query2);
 
-
+echo "<br><br>";
 echo "<a href='index.php'>Date request sent. Click here to return to main menu.</a>";
 
 }

@@ -12,9 +12,32 @@ $result = json_decode($user_data,true);
     $sql = "UPDATE users SET matchrequest=1,matchrequestfrom='$requestfrom'  WHERE user_name='$user_name'";
     $result = $con->query($sql);
 
-    echo "Succesfully sent a match request to user ".$requestfrom. "<br><a href='index.php'>Click here to return to main menu.</a>";
 
+    echo "Succesfully sent a match request to user ".$requestfrom;
+    echo "<br>"; 
+    echo "<a href='index.php'>You will be redirected after 3 second</a>";
+    
+    header("refresh:3;url=index.php" );
 
 
 
 ?>
+<html>
+<head>
+    <style>
+       body{
+    background-color: lightblue;
+    background-image:url(https://media.kasperskydaily.com/wp-content/uploads/sites/92/2021/07/16173855/mwc21-online-dating-apps-featured.png);
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position: center;
+}
+
+        </style>
+        </head>
+
+</head>
+<body>
+    
+</body>
+</html>
