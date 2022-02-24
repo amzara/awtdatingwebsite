@@ -12,31 +12,36 @@ $user_data = check_login($con);
 <p>Displaying all user information for users that has matching on.</p>
 <?php
 
-$sql = "SELECT user_name,age,sex,location FROM usersinfo WHERE matching=1";
+$sql = "SELECT user_name, age,sex,location FROM usersinfo WHERE matching=1";
 $result = $con->query($sql);
+$myname=$user_data['user_name'];
 
 if ($result->num_rows > 0) {
-    
+
     echo "<table border='1'>
-    <tr>
-    <th>Id</th>
-    <th>UserId</th>
-    <th>Username</th>
-    <th>Date</th>
-    <th>Matching</th>
-    </tr>";
+		<tr>
+		<th>Username</th>
+		<th>Age</th>
+		<th>Sex</th>
+		<th>Location</th>
+		
+		</tr>";
 
 
+    // output data of each row
     while($row = $result->fetch_assoc()) {
         echo "<tr>";
-		echo "<td>" .$row["user_name"]. "</td>";
-		echo "<td>" .$row["age"]. "</td>";
-		echo "<td>" .$row["sex "]. "</td>";
-		echo "<td>" .$row["location"]. "</td>";
-	
-		echo "</tr></table>";
+		echo "<td>" .$row['user_name']. "</td>";
+		echo "<td>" .$row['age']. "</td>";
+		echo "<td>" .$row['sex']. "</td>";
+		echo "<td>" .$row['location']. "</td>";
+		
+		echo "</tr>";
     }
-} else {
+    echo "</table>";
+} 
+
+else {
     echo "0 results";
 }
 
@@ -44,6 +49,7 @@ if ($result->num_rows > 0) {
 ?>
 
 <p>Enter the username that you want to match with:</p>
+
 <form method="POST">
 <input type="text" name="user_name">
 <input type="submit">
@@ -52,23 +58,35 @@ if ($result->num_rows > 0) {
 <?php
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
-	$user_name=$_POST['user_name'];
+if($_POST['user_name']==$myname){
+echo "You cannot enter your own name. Please try again";
+}else{	
+    
+    $user_name=$_POST['user_name'];
 
 
 $sql="SELECT user_name,age,sex,location FROM usersinfo WHERE user_name='$user_name'";
 $result = $con->query($sql);
 
 echo "<br>";
-echo "Confirm information?";
+
 
 if ($result->num_rows > 0) {
-    // output data of each row
+    "<table border='1'>
+    <tr>
+    <th>Username</th>
+    <th>Age</th>
+    <th>Sex</th>
+    <th>Location</th>
+    
+    </tr>";
     while($row = $result->fetch_assoc()) {
-        echo "<br>|Username: ". $row["user_name"]. "| AGE: ". $row["age"].  "|Sex:" . $row["sex"] . "|Location:" . $row["location"] ."<br>";
-		$matchusername=$row["user_name"];
+        $matchusername=$row["user_name"];
+       echo "Send match request to user ".$matchusername. " ?";
+		
         echo "<form method='post' action='matchfunction.php'>
 <input type='hidden' value ='$matchusername'  name='matchusername'>
-<input value='match' type='submit'>
+<input value='Confirm' type='submit'>
 </form>";
 		
     }
@@ -79,7 +97,7 @@ if ($result->num_rows > 0) {
 echo "<br><br>";
 
 }
-
+}
 ?>
 
 
@@ -95,7 +113,8 @@ echo "<br><br>";
 
 
 
-
+<br><br>
+<a href="lovecalculator.html" target="_blank">If you need help figuring out who to match with, use our Love Calculator to measure your compatilibity rate!</a><br>
 <a href="index.php">Click to Go back to Main Menu</a><br>
 
 

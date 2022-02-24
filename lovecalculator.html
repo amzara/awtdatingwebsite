@@ -52,7 +52,7 @@ $.get("getTheUserName.php", function(data){
                     $("#result").text("Your result:"+final_result.result);
                   });
               }else{
-                alert("user does not exist");
+                alert("Username does not exist");
 
               }
             console.log(final_result);
@@ -67,7 +67,9 @@ $.get("getTheUserName.php", function(data){
    
     </script>
 <body>
-    <form id="formoid"  title="">
+  <h1>Love Calculator</h1>
+  <p>All you have to do is enter the other person's username and our API will calculate it for you!</p>
+  <form id="formoid"  title="">
         <div>
           <label class="title">Username</label>
           <input type="text" id="second_name" >
@@ -77,6 +79,7 @@ $.get("getTheUserName.php", function(data){
         </div>
       </form>
       <div id="percentage"></div>
+      <br>
       <div id="result"></div>
       </form>
  

@@ -53,7 +53,7 @@ session_start();
 	if($result['matchrequest'] == 1){
 		echo "You currently have a match request from user: " .$result['matchrequestfrom'];
 		echo "<br>";
-		echo "Accept?"; 
+		
 		echo "<form method='post' action='multiquery.php'>
 		<input type='hidden' value ='$matchrequestfrom'  name='matchrequestfrom'>
 		<input value='Match!' type='submit'>
@@ -113,7 +113,7 @@ session_start();
 	
 
 ?>	
-
+<br>
 -----------------------------------<br>
 <a href="lovecalculator.html" target="_blank">LOVE API CALCULATOR</a><br>
 <a href="googletranslate.html" target="_blank">Google Translate API</a><br>
