@@ -37,8 +37,7 @@ session_start();
 	<p>What do you want to do?</p>
 	<a href="editprofile.php">Edit my profile information and set matching status.</p>
 	<a href="listallprofile.php">See all user that wants to match up.</a><br>
-	<a href="requestdate.php">Test</a>
-	<a href="selectmatch.php">Testselectmatch</a>
+
 	
 	--------------------------------------------------------<br><br>
 
@@ -49,6 +48,7 @@ session_start();
 	$matchrequestfrom=$result['matchrequestfrom'];
 	$currentmatch=$result['currentmatch'];
 	$daterequest=$result['daterequest'];
+	$currentuser=$result['user_name'];
 	
 	if($result['matchrequest'] == 1){
 		echo "You currently have a match request from user: " .$result['matchrequestfrom'];
@@ -72,7 +72,23 @@ session_start();
 			echo "<form method='post' action='viewdaterequest.php'>";
 			echo "<input type='submit' value='View'>";
 
-		}else{
+		}else if($daterequest==2){
+		$query3="SELECT date,time,venue,datemessage FROM usersdate WHERE user_name='$currentuser'";
+	$resultt = $con->query($query3);
+	if ($resultt->num_rows > 0) {
+    // output data of each row
+    while($row = $resultt->fetch_assoc()) {
+        $date=$row['date'];
+        $time=$row['time'];
+        $venue=$row['venue'];
+        $datemessage=$row['datemessage'];
+        echo "You have an ongoing date scheduled at: <br>";
+        echo "Date: ".$date."<br>";
+        echo "Time: ".$time."<br>";
+        echo "Venue: ".$venue."<br>";
+        }
+		}
+	}else{
 		echo "Click here to send a date request<br>";
 		echo "<form method='post' action='requestdate.php'>	
 		<input value='Request a date' type='submit'>";
@@ -99,7 +115,7 @@ session_start();
 ?>	
 
 -----------------------------------<br>
-<a href="selectmatch3.html" target="_blank">LOVE API CALCULATOR</a><br>
+<a href="lovecalculator.html" target="_blank">LOVE API CALCULATOR</a><br>
 <a href="googletranslate.html" target="_blank">Google Translate API</a><br>
 
 </body>

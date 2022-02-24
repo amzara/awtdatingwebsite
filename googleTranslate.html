@@ -35,6 +35,9 @@ $.each(language_option, function (key, value) {
    $('#languages').append(`<option value="${key}">
                                        ${value}
                                   </option>`);
+
+//append option value to language select since API does not support all language
+
 });
   
             
@@ -69,19 +72,21 @@ $.each(language_option, function (key, value) {
 <form method ="post"   id="translate">
 
     
-        <select id="languages" name="languages" >
-        // add the option here based on jquery
-        </select>
+     
       
-
-    <textarea id="text" >
+<div id="translate">
+  What do you want to say?<br>  <textarea id="text" >
 
     </textarea>
+    <br>
+    Translate to :<select id="languages" name="languages" >
+        
+    </select><br>
     <input type="submit" />
 </form>    
- 
+ <br>
     <div id='translated_text'></div>
-  
+</div>
         
 </body>
 

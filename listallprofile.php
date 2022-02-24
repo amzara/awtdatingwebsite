@@ -12,13 +12,29 @@ $user_data = check_login($con);
 <p>Displaying all user information for users that has matching on.</p>
 <?php
 
-$sql = "SELECT user_name, age,sex,location FROM usersinfo WHERE matching=1";
+$sql = "SELECT user_name,age,sex,location FROM usersinfo WHERE matching=1";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
-    // output data of each row
+    
+    echo "<table border='1'>
+    <tr>
+    <th>Id</th>
+    <th>UserId</th>
+    <th>Username</th>
+    <th>Date</th>
+    <th>Matching</th>
+    </tr>";
+
+
     while($row = $result->fetch_assoc()) {
-        echo "<br>|Username: ". $row["user_name"]. "| Age: ". $row["age"].  "|Sex:" . $row["sex"] ."|Location::" . $row["location"] . "<br>";
+        echo "<tr>";
+		echo "<td>" .$row["user_name"]. "</td>";
+		echo "<td>" .$row["age"]. "</td>";
+		echo "<td>" .$row["sex "]. "</td>";
+		echo "<td>" .$row["location"]. "</td>";
+	
+		echo "</tr></table>";
     }
 } else {
     echo "0 results";

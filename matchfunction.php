@@ -12,7 +12,7 @@ $result = json_decode($user_data,true);
     $sql = "UPDATE users SET matchrequest=1,matchrequestfrom='$requestfrom'  WHERE user_name='$user_name'";
     $result = $con->query($sql);
 
-    echo "<a href='index.php'>Main Menu</a>";
+    echo "<a href='index.php'>Succesfully sent a match request to ".$requestfrom. "<br>Click here to return to main menu.</a>";
 
 
 

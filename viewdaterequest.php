@@ -37,7 +37,7 @@ if ($resultt->num_rows > 0) {
         echo "Date: ".$date."<br>";
         echo  "Time: ".$time."<br>";
         echo "Venue: ".$venue."<br>";
-        echo "<div id='image'></div>";
+         echo "<div id='image'>aaa</div>";
         echo "Message: ".$datemessage."<br>";
 
     
@@ -51,6 +51,7 @@ if ($resultt->num_rows > 0) {
 ?>
 
 <script type="text/javascript">
+  /*commenting so that i dont reach 50 use limit
     var venue = "<?php Print($venue); ?>";
     var final_result;
     var settings = {
@@ -74,6 +75,7 @@ if ($resultt->num_rows > 0) {
                   });
 
                 //   console.log(final_result);
+                */
   
 </script>
 
