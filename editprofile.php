@@ -331,6 +331,7 @@ mysqli_query($con, $query2);
 
 ?>
 
+
 <br><br><br><a href="index.php">Click here to go back to main menu</a>
 </body>
 </html>

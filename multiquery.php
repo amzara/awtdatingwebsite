@@ -23,6 +23,7 @@ mysqli_query($con, $query4);
 
 echo "Matching between ". $currentuser. " and ".$matcheduser." is succesful.";
 echo "<br>";
+
 echo "<a href='index.php'>You will be redirected after 3 second</a>";
     
   header("refresh:3;url=index.php" );

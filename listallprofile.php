@@ -64,7 +64,7 @@ else {
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 if($_POST['user_name']==$myname){
-echo "You cannot enter your own name. Please try again";
+echo '<script>alert("You cannot enter your own name. Please try again.")</script>';
 }else{	
     
     $user_name=$_POST['user_name'];
@@ -120,7 +120,7 @@ echo "<br><br>";
 
 <br><br>
 <a href="lovecalculator.html" target="_blank">If you need help figuring out who to match with, use our Love Calculator to measure your compatilibity rate!</a><br><br>
-<a href="index.php">Click to Go back to Main Menu</a><br>
+<a href="index.php">Go back to Main Menu</a><br>
 
 
 

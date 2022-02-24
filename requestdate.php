@@ -24,7 +24,8 @@ Drop a Message Here:<br><input type="text" required name="datemessage"><br>
 <input type="submit">
 </form>
 
-<br><br><a href="googletranslate.html" target="_blank">Language barrier getting in the way of love? Use our Google Translate API to help you convey your love!</a>
+<br><br><a href="googletranslate.html" target="_blank">Language barrier getting in the way of love? Use our Google Translate API to help you convey your love!</a><br>
+<a href="index.php">Go back to main menu</a>;
 
 
 <?php 
@@ -52,7 +53,12 @@ $query2= "UPDATE usersdate SET date='$date',time='$time',venue='$venue',datemess
 mysqli_query($con, $query2);
 
 echo "<br><br>";
-echo "<a href='index.php'>Date request sent. Click here to return to main menu.</a>";
+
+
+echo '<script>alert("Date request is succesful.")</script>';
+echo "<a href='index.php'>You will be redirected after 3 second</a>";
+    
+  header("refresh:3;url=index.php" );
 
 }
 }
